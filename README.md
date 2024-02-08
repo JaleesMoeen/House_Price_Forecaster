@@ -28,9 +28,11 @@ This Predicvtive Machine Learning Model for 'House Price Forecaster' break into 
 
 Deliverable 1: Data Preprocessing (Initial & Final Data)
 
-Deliverable 2: Building and Optmization of Machine Learning Model (Initial & Final Data).
+Deliverable 2: Feature Engineering  ( Random Forest Regressor)
 
-Deliverable 3: Flask-powered API & Tableau Visualizations 
+Deliverable 3: Machine Learning Model (Initial & Final Data)
+
+Deliverable 4: Flask-powered API & Tableau Visualizations 
 
 
 ![alt text](Images/4_AI.png)
@@ -145,6 +147,129 @@ The preprocessed training dataset is saved to JSON and CSV as "initial_preproces
 - Dropping columns that are deemed less relevant or have low correlation with the target variable (`SalePrice`). These columns are stored in `columns_to_drop` and are removed from the DataFrame using `drop`.
 
 - The final preprocessed training dataset is exported to both JSON and CSV formats for further analysis or modeling. 
+
+
+## Deliverable 2: Feature Engineering  ( Random Forest Regressor)
+
+
+![alt text](Images/14_feature_engineering.png)
+
+
+### 2.1 Additional Dependencies
+
+Before you begin, ensure you have the additional dependenices in the jupyter notebook:
+
+- Pandas
+
+- Numpy
+
+- Scikit-learn
+
+- Statsmodels
+
+
+### How Featured the Data with Random Forest Regressor
+
+We attempt to get the features with intial and final data, and then based on less features and most opmtized final preprocessed data, we consider to continue machine learning with the final scaled data.
+
+**Split and Scale Data** 
+You're loading the preprocessed data from the CSV file.
+
+- Separating the target variable (SalePrice) from the features (X).
+- Scaling the numerical features using StandardScaler.
+- One-hot encoding the categorical features.
+
+
+**Feature Selection with Random Forest Regressor**
+- Training a Random Forest Regressor model on the preprocessed data.
+- Using the trained model to select relevant features based on their importance scores.
+- Filtering out less important features and storing the selected features in a DataFrame.
+
+**Model Training with Linear Regression**
+- Initializing and training a Linear Regression model using the selected features.
+
+**Model Evaluation**
+- Making predictions using the trained Linear Regression model.
+- Computing various metrics such as the model score, R-squared (r2), mean squared error (MSE), root mean squared error (RMSE), and standard deviation.
+
+
+## Deliverable 3: Machine Learning Models (Initial & Final Data)
+
+
+Neural networks work better at predictive analytics because of the hidden layers. Linear regression models use only input and output nodes to make predictions. The neural network also uses the hidden layer to make predictions more accurate. That's because it 'learns' the way a human does.
+
+
+![alt text](Images/12_NN.jpg)
+
+
+### 3.1 Data Sources
+
+We use the data resources from two files:
+
+**initial_preprocessed_hp_train.csv** 
+
+The data that generates 246 features after binning and hot encoding. 
+
+**scaled_preprocessed_hp_data.csv**
+
+The data with 80 features after binning and hot encoding.
+
+
+![alt text](Images/15_ML_data_source.png)
+
+
+
+### 3.2 Neural Network Model 
+
+### 3.3 Data Preprocessing (Initial Data)
+
+**Target variable(s) for the model:** The model aims to predict the `SalePrice` variable.
+
+**Feature variable(s) for the model:** The model incorporates various feature variables such as `MSSubClass`, `MSZoning`, `LotFrontage`, `LotArea`, `Neighborhood`, `HouseStyle`, `OverallQual`, `OverallCond`, `MasVnrType`, `MasVnrArea`, `ExterQual`, `BsmtQual`, `TotalBsmtSF`, `Fireplaces`, and others.
+
+**Variable(s) removed from the input data:** The `Id` column was removed from the input data as it serves as an identification column and does not contribute as a feature or target.
+
+
+### 3.4 Data Preprocessing (Final Data by Random Forest Regressor)
+
+**Target variable(s) for the model:** The model aims to predict the `SalePrice` variable.
+
+**Feature variable(s) for the model:** The model incorporates various different features compared to the initial data. These features are specific to the model includes variables like `GarageCars`, `2ndFlrSF`, `1stFlrSF`, `YearBuilt`, `FullBath`, `BsmtFinSF1`, `OverallQual_Other`, `GarageArea`, `YearRemodAdd`, and `TotRmsAbvGrd`, which are not present in the inital data. Additionally, there are some common features like `LotArea` and `Fireplaces` present in both data.
+
+**Variable(s) removed from the input data:** The `Id` column was removed from the input data as it serves as an identification column and does not contribute as a feature or target.
+
+
+### 3.5 Compiling, Training, and Evaluating the Model
+
+Let's view how we build and optmized the neural network model for both initial and final data.
+
+
+![alt text](Images/16_Initial_NN_Results.png)
+
+
+![alt text](Images/17_Final_NN_Results.png)
+
+
+**Number of Neurons:** Configured with varying numbers based on experimentation.
+
+**Layers:** Multiple hidden layers were added to capture complex patterns.
+
+**Activation Functions:** ReLU for hidden layers and Linear for the output layer (regression).
+
+**Model Performance:**
+Achievement of Target Model Performance: Achieved satisfactory performance metrics including mean squared error (MSE) and root mean squared error (RMSE).
+
+**Steps to Increase Model Performance:**
+
+To optimize model performance to get more accuracy and less loss. I went through these different alterations:
+
+- **Changes in Data:**  Conducted feature engineering by removing irrelevant columns and creating additional features through binning and encoding categorical variables.
+
+- **Iterative Tuning:** Adjusted the number of neurons, layers, and activation functions iteratively.
+
+- **Optimization Techniques:** Conducted grid search and randomized search to tune hyperparameters such as learning rate, batch size, and dropout rates.
+- **Regularization:** Implemented dropout layers for regularization.
+- **Epochs:** Increased the number of epochs to allow for more training.
 
 
 
