@@ -9,6 +9,10 @@
     color : rgb(22, 141, 135);
 }
 
+.swal2-container {
+    align-items: flex-end; /* Align items to the bottom */
+}
+
 
 /* updated  */
 

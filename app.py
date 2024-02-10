@@ -17,10 +17,11 @@ model = pickle.load(open('Final_Predictions/hp_forecaster_model.pkl', 'rb'))
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     val1 = request.form['LotArea']
-    val2 = request.form['TotRmsAbvGrd']
-    val3 = request.form['BedroomAbvGr']
-    val4 = request.form['YearBuilt']
-    arr = np.array([val1, val2, val3, val4])
+    val2 = request.form['BedroomAbvGr']
+    val3 = request.form['FullBath']
+    val4 = request.form['GarageCars']
+    val5 = request.form['YearBuilt']
+    arr = np.array([val1, val2, val3, val4, val5])
     arr = arr.astype(np.float64)
     pred = model.predict([arr])
 

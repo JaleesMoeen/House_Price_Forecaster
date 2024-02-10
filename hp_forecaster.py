@@ -11,12 +11,12 @@ df = pd.read_csv(
 
 
 # Select columns
-columns = ['LotArea', 'TotRmsAbvGrd', 'BedroomAbvGr', 'YearBuilt', 'SalePrice']
+columns = ['LotArea', 'BedroomAbvGr', 'FullBath', 'GarageCars', 'YearBuilt', 'SalePrice']
 df = df[columns]
 
 # Split data into features and target
-X = df.iloc[:, 0:4]
-y = df.iloc[:, 4:]
+X = df.iloc[:, 0:5]
+y = df.iloc[:, 5:]
 
 # Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
