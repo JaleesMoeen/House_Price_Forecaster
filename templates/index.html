@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>House Price Forecaster</title>
+  <!-- Include the css and js for Sweet alert -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+</head>
+
+
+<body>
+  <!-- Start of the Container -->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 jumbotron text-center">
+              <h1>House Price Forecaster</h1>
+              <p>Your Way to Your Home</p>
+          </div>
+      </div>
+
+      <div class="register_page">
+          <div class="form">
+              <form action="{{ url_for('predict') }}" method="POST">
+
+                  Bedrooms: <input type="number" name='LotArea' placeholder="Enter the no of Bedrooms"><br>
+                  Bathrooms: <input type="number" name='TotRmsAbvGrd' placeholder="Enter the no of Bathrooms"><br>
+                  Floors: <input type="number" name='BedroomAbvGr' placeholder="Enter the no of Floors"><br>
+                  Year of Build: <input type="number" name='YearBuilt' placeholder="Enter year of Build"><br>
+
+                  <!-- For Neural Network Model -->
+                  <!-- GarageCars: <input type="number" name='GarageCars' placeholder="Enter the number of GarageCars"><br>
+                  ExterQual_TA: <input type="number" name='ExterQual_TA' placeholder="Enter the ExterQual_TA"><br>
+                  2ndFlrSF: <input type="number" name='2ndFlrSF' placeholder="Enter the 2ndFlrSF"><br>
+                  1stFlrSF: <input type="number" name='1stFlrSF' placeholder="Enter the 1stFlrSF"><br>
+                  YearBuilt: <input type="number" name='YearBuilt' placeholder="Enter the YearBuilt"><br>
+                  FullBath: <input type="number" name='FullBath' placeholder="Enter the FullBath"><br>
+                  TotalBsmtSF: <input type="number" name='TotalBsmtSF' placeholder="Enter the TotalBsmtSF"><br>
+                  BsmtFinSF1: <input type="number" name='BsmtFinSF1' placeholder="Enter the BsmtFinSF1"><br>
+                  OverallQual_Other: <input type="number" name='OverallQual_Other' placeholder="Enter the OverallQual_Other"><br>
+                  LotArea: <input type="number" name='LotArea' placeholder="Enter the LotArea"><br>
+                  GarageArea: <input type="number" name='GarageArea' placeholder="Enter the GarageArea"><br>
+                  YearRemodAdd: <input type="number" name='YearRemodAdd' placeholder="Enter the YearRemodAdd"><br>
+                  TotRmsAbvGrd: <input type="number" name='TotRmsAbvGrd' placeholder="Enter the TotRmsAbvGrd"><br>
+                  Fireplaces: <input type="number" name='Fireplaces' placeholder="Enter the Fireplaces"><br> -->
+
+                  <input type="submit" value="Predict" class="submit">
+              </form>
+              <p>Predicted House Price is: {{ data }}</p>
+          </div>
+      </div>
+  </div>
+  <!-- End of the Container -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.com/libraries/Chart.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <script src="static/js/app.js"></script>
+  
+  
+  
+
+
+
+</body>
+
+</html>
+
+
