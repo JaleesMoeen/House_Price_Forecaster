@@ -333,6 +333,41 @@ May be used for storage, utility rooms, or as unfinished living areas designed f
 This story of House Price Forecaster Dashboards is deployed on [Tableau Public Visualization](https://public.tableau.com/views/House_Price_forecaster/HousePrice_Main?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 
+### 4.2 House Forecaster Flask App
+
+Welcome to the House Price Predictor app! Start forecasting your dream home's price today.
+
+### 4.2.1 Prerequisites for Flask
+
+Before you begin, ensure you have the following installed:
+
+Flask (Imports the Flask framework, allowing the creation of a web application)
+
+jsonify ( Python dictionaries to JSON responses, and render_template facilitates rendering HTML templates )
+
+render_template  (facilitates rendering HTML templates)
+
+HTML, CSS, Bootsrap ( for structure and style web page)
+
+JavaScript ( for dynamic behavior)
+
+
+### 4.2.2 Flask API Routes
+
+#### Home Page Route (@app.route("/")): 
+
+Renders the "index.html" template when users access the home page ("/").
+
+#### House Price Data API Route:
+
+The below routes read "House Price Data" from a CSV file, converts it to JSON, and returns it as a JSON response:
+
+/hp_features_data
+
+#### 4.2.3 House Price Forecaster Layout
+
+![alt text](Images/27_flask_app.png)
+
 
 ## Authors
 
