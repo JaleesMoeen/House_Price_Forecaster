@@ -7,12 +7,12 @@
 Hi, Welcome to the House Price Forecaster! Our project harnesses the power of machine learning and deep learning techniques to predict house prices accurately. By leveraging advanced algorithms, we aim to provide users with reliable forecasts based on various property features.
 
 
-![alt text](Images/1_Canada.png)
+![alt text](Images/1_ames_lowa.jpg)
 
 
 ### Introduction 
 
-Canada has experienced significant growth in its housing market over the past several years, with prices varying widely depending on location, type of property, and local market conditions. Major cities like Toronto, Vancouver, and Montreal are known for their high housing costs, driven by factors such as strong demand, limited supply, and foreign investment.
+The Ames housing market offers diverse property options catering to a range of buyers, from historic homes to modern developments. With steady demand driven by Iowa State University and a stable economy, Ames presents an attractive blend of affordability and investment potential in a charming suburban setting."
 
 
 ![alt text](Images/2_home.jpg)
@@ -32,7 +32,7 @@ Deliverable 2: Feature Engineering  ( Random Forest Regressor)
 
 Deliverable 3: Machine Learning Model (Initial & Final Data)
 
-Deliverable 4: Flask-powered API & Tableau Visualizations 
+Deliverable 4: Tableau Dashboards & Flask-powered App  
 
 
 ![alt text](Images/4_AI.png)
@@ -87,26 +87,9 @@ Missing values in various columns are handled using appropriate strategies such 
 
 Certain columns are converted to appropriate data types using astype() function, such as converting categorical variables to the 'category' data type.
 
-   - `MSSubClass`: Converted to 'category' data type.
-   - `MSZoning`: Converted to 'category' data type.
-   - `Street`: Converted to 'category' data type.
-   - `LotShape`: Converted to 'category' data type.
-   - `LandContour`: Converted to 'category' data type.
+Converted several features to categorical data types: `MSSubClass`, `MSZoning`, `Street`, `LotShape`, and `LandContour`.
 
-Some categorical variables with a large number of unique values are binned to reduce dimensionality i.e. noise reduction and improve model performance. Converts certain categorical features with high cardinality into broader categories to avoid overfitting.
-
-   - `LotFrontage`: Values were binned based on a cutoff value.
-   - `Neighborhood`: Values were binned based on a cutoff value.
-   - `Condition1`: Values were binned based on a cutoff value.
-   - `Condition2`: Values were binned based on a cutoff value.
-   - `HouseStyle`: Values were binned based on a cutoff value.
-   - `OverallQual`: Values were binned based on a cutoff value.
-   - `OverallCond`: Values were binned based on a cutoff value.
-   - `RoofStyle`: Values were binned based on a cutoff value.
-   - `RoofMatl`: Values were binned based on a cutoff value.
-   - `Exterior1st`: Values were binned based on a cutoff value.
-   - `Exterior2nd`: Values were binned based on a cutoff value.
-   - `MasVnrArea`: Values were binned based on a cutoff value.
+Categorical variables with high cardinality are binned to reduce noise and improve model performance. Features like `LotFrontage`, `Neighborhood`, `Condition1`, `Condition2`, `HouseStyle`, `OverallQual`, `OverallCond`, `RoofStyle`, `RoofMatl`, `Exterior1st`, `Exterior2nd`, and `MasVnrArea` are binned based on cutoff values.
 
 ![alt text](Images/7_recycle_bin.png)
 
@@ -185,15 +168,16 @@ You're loading the preprocessed data from the CSV file.
 - Using the trained model to select relevant features based on their importance scores.
 - Filtering out less important features and storing the selected features in a DataFrame.
 
-**Model Training with Linear Regression**
-- Initializing and training a Linear Regression model using the selected features.
 
-**Model Evaluation**
-- Making predictions using the trained Linear Regression model.
-- Computing various metrics such as the model score, R-squared (r2), mean squared error (MSE), root mean squared error (RMSE), and standard deviation.
+![alt text](Images/18_rf_features.png)
 
 
 ## Deliverable 3: Machine Learning Models (Initial & Final Data)
+
+After applying a linear regression model to the data, the results indicated limitations in capturing the complex patterns inherent in the dataset. Recognizing the need for a more sophisticated approach, I transitioned to employing neural network models. Unlike linear regression, neural networks leverage hidden layers to extract intricate patterns and relationships within the data. This capability allows neural networks to deliver superior predictive performance by mimicking the learning process observed in human cognition.
+
+
+![alt text](Images/19_lr_model.png)
 
 
 Neural networks work better at predictive analytics because of the hidden layers. Linear regression models use only input and output nodes to make predictions. The neural network also uses the hidden layer to make predictions more accurate. That's because it 'learns' the way a human does.
@@ -271,6 +255,82 @@ To optimize model performance to get more accuracy and less loss. I went through
 - **Regularization:** Implemented dropout layers for regularization.
 - **Epochs:** Increased the number of epochs to allow for more training.
 
+
+
+
+## Deliverable 4: Tableau Dashboards & Flask-powered App  
+
+Let's benefit from the Tableau Visaul Analysis and Flask App Forecaster!
+
+
+![alt text](Images/20_tableau.png)
+
+
+![alt text](Images/21_flask.webp)
+
+
+
+### 4.1 Data Discoveries & Dashboards (Tableau)
+
+At a glance, there is the sotry on which all the four dashboards are created. Each important visuals are covered in the dashbaords.
+
+#### 4.1.1 House Price Story
+
+![alt text](Images/22_HousePrice_Main.png)
+
+
+#### 4.1.2 Regional Analysis
+
+
+![alt text](Images/23_Regional_Analysis.png)
+
+
+From the regional analysis, MeadowV has the lowest average sale price with 98,576 in it's sorrounding, whereas the NoRidge occupy the most highest sales price with  335,295.
+
+Most expensive house style is "2.5 finshed" and the economical is the "1.5 Unfinished".
+
+The excellent exterior quality keeps on the top prices, where other qualities remains on average.
+
+
+#### 4.1.3 Time Series Analysis
+
+
+![alt text](Images/24_Time_Series_Analysis.png)
+
+
+The housing prices vary each year based on the year of construction, with a clear trend indicating that newer homes tend to command higher prices.
+
+The average sale price for each year of sale remains stable, ranging from $175,000 to $185,000.
+
+#### 4.1.4 House Distrubution Analysis
+
+
+![alt text](Images/25_House_Distribution_Analysis.png)
+
+
+The three-bedroom configuration emerges as the most popular, with the highest number of houses featuring three bedrooms.
+
+Meanwhile, properties with two bathrooms appear to be in high demand, correlating with a relatively elevated price of 213,010.
+
+#### 4.1.5 Basement Details
+
+
+![alt text](Images/26_Basement_Detais.png)
+
+The basement area exhibits significant fluctuations.
+
+The highest sales price, at $235,414, is observed for Grade Level Quarters, while recreational space records the lowest at $146,889.
+
+
+Above grade Living Quaters - partially or fully above ground level, typically have windows and natural light below ground level have limited or no natural light partially or fully at ground level with direct access to the exterior without stairs or ramps. 
+
+Similar to ALQ basements LWQ basements are unfinished or minimally finished spaces with basic amenities and limited insulation or ventilation. 
+
+May be used for storage, utility rooms, or as unfinished living areas designed for entertainment and leisure activities.
+
+### 4.1.6 Deployment
+
+This story of House Price Forecaster Dashboards is deployed on [Tableau Public Visualization](https://public.tableau.com/views/House_Price_forecaster/HousePrice_Main?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 
 
