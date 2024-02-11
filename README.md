@@ -369,6 +369,23 @@ The below routes read "House Price Data" from a CSV file, converts it to JSON, a
 ![alt text](Images/27_flask_app.png)
 
 
+
+## Summary
+
+After facing challenges with the linear regression and attempting to refine it with selected features from a random forest regressor, we decided to explore a neural network model using the original dataset. 
+
+Despite our efforts to optimize the neural network model, the Mean Squared Error (MSE) remained unsatisfactory. 
+
+However, upon integrating the selected features from the random forest regressor into the neural network architecture and further optimization, we managed to achieve a RMSE of 32800.50781 MSE of 20823.78516 with a loss of 1075873280.0.
+
+## Limitations
+
+The higher number of features but with with missing values  that lead to overfitting of the linear regression model.
+
+The data is only from 1972 to 2010, no recent data available.
+
+
+
 ## Authors
 
 ## [Maira Syed GitHub](https://github.com/mairasyed)
