@@ -33,7 +33,7 @@ def index():
     # Render the "index.html" template
     return render_template("index.html")
 
-# Define a route for the iPhone Samsung details API
+# Define a route for the House Prices Data
 @app.route("/hp_features_data")
 def hp_features_data():
 
@@ -42,7 +42,7 @@ def hp_features_data():
     df1=df.to_json(orient='records')
     df1=pd.read_json(df1)
 
-    # Return the iPhone  Samsung details as JSON
+    # Return the House Prices Data to Json
     return jsonify(df1.to_dict(orient='records'))
 
 # Get Predictions through neural network model
